@@ -1,11 +1,26 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { ApolloProvider } from '@apollo/client';
+import { ToastContainer } from 'react-toastify';
+import client from './config/apollo';
+import Auth from './pages/Auth';
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = React.useState(undefined);
+
   return (
-    <div className="App">
-      <Button primary>Primary</Button>
-      <Button secondary>Secondary</Button>
-    </div>
+    <ApolloProvider client={client}>
+      {!isAuthenticated ? <Auth /> : <div>Loading...</div>}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </ApolloProvider>
   );
 }
