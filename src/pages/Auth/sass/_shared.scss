@@ -1,0 +1,46 @@
+@import '../../../index.scss';
+
+.auth {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $background-grey-light;
+
+  &--image {
+    width: 250px;
+  }
+
+  &__container {
+    &--form {
+      width: 400px;
+      background-color: $background-light;
+      padding: $space--20 $space--52;
+      border: 1px solid $border-grey;
+      margin-top: $space--52;
+      border-radius: $border-radius--6;
+    }
+
+    &--change-form {
+      margin-top: $space--12;
+      width: 400px;
+      background-color: $background-light;
+      padding: $space--20 $space--52;
+      border: 1px solid $border-grey;
+      text-align: center;
+      border-radius: $border-radius--6;
+
+      &__link {
+        color: $action;
+        font-weight: bold;
+        margin-left: $space--4;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
