@@ -1,0 +1,7 @@
+@media only screen and (max-width : 768px) {
+  @import 'mobile';
+};
+
+@media only screen and (min-device-width: 768px){
+  @import 'desktop';
+}
