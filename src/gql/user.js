@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { gql } from '@apollo/client';
 
 export const REGISTER = gql`
@@ -9,6 +8,38 @@ export const REGISTER = gql`
       username
       email
       createAt
+    }
+  }
+`;
+
+export const LOGIN = gql`
+  mutation login($input: LoginInput) {
+    login(input: $input) {
+      token
+    }
+  }
+`;
+
+export const SEARCH = gql`
+  query search($search: String) {
+    search(search: $search) {
+      name
+      username
+      avatar
+    }
+  }
+`;
+
+export const GET_USER = gql`
+  query getUser($id: ID, $username: String) {
+    getUser(id: $id, username: $username) {
+      id
+      name
+      username
+      email
+      siteWeb
+      description
+      avatar
     }
   }
 `;
