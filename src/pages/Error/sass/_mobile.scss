@@ -1,1 +1,9 @@
 @import 'shared';
+
+.page-not-found {
+  /*  override styles */
+  &--image {
+    margin-top: $space--20;
+    max-width: 300px !important;
+  }
+}
